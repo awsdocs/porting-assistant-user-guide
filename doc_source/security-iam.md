@@ -6,14 +6,23 @@ To use Porting Assistant, you must attach the following IAM policy as an inline 
 
 ```
 {
- "Version": "2012-10-17",
- "Statement": [
- {
- "Sid": "EnCorePermission",
- "Effect": "Allow",
- "Action": "execute-api:invoke",
- "Resource": "arn:aws:execute-api:us-east-1:492443789615:3dmmp07yx6/*"
- }
- ]
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "EnCorePermission",
+            "Effect": "Allow",
+            "Action": [
+                "execute-api:invoke",
+                "s3:GetObject",
+                "s3:ListBucket"
+            ],
+            "Resource": [
+                "arn:aws:execute-api:us-east-1:492443789615:3dmmp07yx6/*",
+                "arn:aws:execute-api:us-east-1:547614552430:8q2itpfg51/*",
+                "arn:aws:s3:::aws.portingassistant.dotnet.datastore",
+                "arn:aws:s3:::aws.portingassistant.dotnet.datastore/*"
+            ]
+        }
+    ]
 }
 ```
