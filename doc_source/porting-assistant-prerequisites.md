@@ -6,7 +6,7 @@ The following prerequisites must be verified in order to successfully port your 
 
 The Porting Assistant tool requires the following prerequisites for installation and usage\.
 + **\.NET Core SDK 3\.1**: [Download \.NET Core](https://dotnet.microsoft.com/download/dotnet-core)\.
-+ **AWS CLI**: You must have a valid AWS CLI profile in order for Porting Assistant to collect compatibility information on the public NuGet packages and the APIs within the packages that are in use by your application\. For instructions on how to configure an AWS CLI profile, see [Configuring the AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-configure.html)\. 
++ **AWS CLI**: You must have a valid AWS CLI profile in order for Porting Assistant to collect compatibility information on the public NuGet packages and the APIs within the packages that are in use by your application\. To view the type of application data collected by Porting Assistant , see [Data collected by Porting Assistant for \.NETData collected](data-protection.md#porting-assistant-data-collected)\. Information about public NuGet packages is collected to help AWS prioritize work to address \.NET Core incompatibilities on the NuGet pacakes, if any\. For instructions on how to configure an AWS CLI profile, see Configuring the AWS CLI For instructions on how to configure an AWS CLI profile, see [Configuring the AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-configure.html)\. 
 + Windows 7 or later
 + Administrator access
 + Processor with 1\.8 GHz or above processing speed
@@ -19,15 +19,24 @@ You must attach the following IAM policy as an inline policy to your IAM user\. 
 
 ```
 {
- "Version": "2012-10-17",
- "Statement": [
- {
- "Sid": "EnCorePermission",
- "Effect": "Allow",
- "Action": "execute-api:invoke",
- "Resource": "arn:aws:execute-api:us-east-1:492443789615:3dmmp07yx6/*"
- }
- ]
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "EnCorePermission",
+            "Effect": "Allow",
+            "Action": [
+                "execute-api:invoke",
+                "s3:GetObject",
+                "s3:ListBucket"
+            ],
+            "Resource": [
+                "arn:aws:execute-api:us-east-1:492443789615:3dmmp07yx6/*",
+                "arn:aws:execute-api:us-east-1:547614552430:8q2itpfg51/*",
+                "arn:aws:s3:::aws.portingassistant.dotnet.datastore",
+                "arn:aws:s3:::aws.portingassistant.dotnet.datastore/*"
+            ]
+        }
+    ]
 }
 ```
 
