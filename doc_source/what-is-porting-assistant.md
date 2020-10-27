@@ -25,8 +25,7 @@ The Porting Assistant API replacement engine, powered by the AWS Cloud, continuo
 
 ## Supported versions<a name="porting-assistant-versions"></a>
 
-Porting Assistant supports assessment, conversion, and deployment of C\# ASP\.NET applications deployed in IIS running on Windows Server 2016 and later\.
-+ Supported IIS versions: IIS 7\.0 and later
+Porting Assistant supports assessment and conversion of C\# applications running on Windows Server 2016 and later\.
 + Supported \.NET Framework source versions: \.NET Framework 3\.5 and later 
 **Note**  
 Within the source projects, only \.csproj files are supported\. MS Build conditional constructs and other conditional or nested clauses in \.csproj files are not supported\. Only NuGet version strings that conform to SemVer are supported\. Version strings that use wildcards or variable names are not supported\.
