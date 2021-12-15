@@ -1,10 +1,11 @@
 # Use the Porting Assistant for \.NET assessment tool<a name="porting-assistant-assessment-tool"></a>
 
-This section contains information to help you get started with the Porting Assistant assessment tool\. When you start the assessment tool for the first time, you are prompted to enter your AWS CLI profile information so that the Porting Assistant can collect metrics to improve your experience\. These metrics also help flag issues with the software for AWS to quickly address\. If you have not set up your AWS profile, see [Configuring the AWS CLI ](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-configure.html#cli-quick-configuration)\.
+This section contains information to help you get started with the Porting Assistant for \.NET assessment tool\. When you start the assessment tool for the first time, you are prompted to enter your AWS CLI profile information so that the Porting Assistant for \.NET can collect metrics to improve your experience\. These metrics also help flag issues with the software for AWS to quickly address\. If you have not set up your AWS profile, see [Configuring the AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-configure.html#cli-quick-configuration)\.
 
 **Topics**
 + [Set up Porting Assistant for \.NET](#porting-assistant-assessment-tool-profile)
-+ [Assess a new solution](#porting-assistant-assessment-tool-job)
++ [Assess a new solution using the assessment tool](#porting-assistant-assessment-tool-job)
++ [Assess a new solution using the Porting Assistant CLI console application](#porting-assistant-cli-job)
 + [Analyze NuGet dependencies per project](#porting-assistant-assessment-tool-analyze-project)
 
 ## Set up Porting Assistant for \.NET<a name="porting-assistant-assessment-tool-profile"></a>
@@ -13,30 +14,32 @@ The following steps guide you through the Porting Assistant for \.NET settings f
 
 1. Verify the [Prerequisites](porting-assistant-prerequisites.md)\.
 
-1. From the **Set up Porting Assistant for \.NET** page of the assessment tool, select an **AWS name profile** from the dropdown list or **Add a named profile**\. Porting Assistant for \.NET uses your AWS profile to share your solution information with AWS to make the Porting Assistant tool better\.
+1. From the **Set up Porting Assistant for \.NET** page of the assessment tool, select an **AWS name profile** from the dropdown list or **Add a named profile**\. Porting Assistant for \.NET uses your AWS profile to share your solution information with AWS to make the Porting Assistant for \.NET tool better\.
 
-1. Under **Porting Assistant for \.NET data usage sharing**, clear the check box if you do not want to share your Porting Assistant solution information with AWS\.
+1. Under **Porting Assistant for \.NET data usage sharing**, clear the check box if you do not want to share your Porting Assistant for \.NET solution information with AWS\.
 
    If you accept the data collection option, the following application data is collected:
-   + Application errors generated when running assessments, porting, or when performing other functions provided by the Porting Assistant tool\.
-   + Names and versions of public NuGet packages assessed by the Porting Assistant tool\.
-   + Metrics for assessments run by the Porting Assistant tool on public NuGet packages, such as the number of packages and solutions, and the amount of time taken to create a solution\.
+   + Application errors generated when running assessments, porting, or when performing other functions provided by the Porting Assistant for \.NET tool\.
+   + Names and versions of public NuGet packages assessed by the Porting Assistant for \.NET tool\.
+   + Metrics for assessments run by the Porting Assistant for \.NET tool on public NuGet packages, such as the number of packages and solutions, and the amount of time taken to create a solution\.
 
    You can change your data collection settings at any time in the **Settings** menu\. 
 
 1. Choose **Next** to assess your solution\.
 
-## Assess a new solution<a name="porting-assistant-assessment-tool-job"></a>
+## Assess a new solution using the assessment tool<a name="porting-assistant-assessment-tool-job"></a>
 
 The following steps guide you through the creation of a new assessment solution\.
 
 1. From the **Assess a new solution** page of the assessment tool, **Specify a solution file path**\. Choose your source solution \(\.sln\) file to start an assessment for your \.NET Framework application\.
+**Note**  
+The project is assessed using the version selected in your settings\. The default version is \.NET Core 6\.0\.
 
 1. Choose **Assess**\. You will be taken to the **Assessed solutions** page, where you can view a list of your solutions and the following details about each solution:
    + **Ported projects** — The number of projects in the solution that have been ported\.
    + **Incompatible packages** — The number of packages in the solution that are incompatible with \.NET Core \.
    + **Incompatible APIs** — The number of API calls in the solution that are incompatible with \.NET Core\.
-   + **Portability score** — The portability score indicates how portable an individual project is\. It is represented as a fraction of compatible APIs/non\-compatible APIs within the solution\.
+   + **Build errors** — The number of build errors in a solution after it has been assessed\. 
 
 1. The status of your assessment appears at the top of the page\. Choose **View details** to see an overview of your solution assessment, which includes a breakdown of the incompatible NuGet packages and APIs\. You can also view the project references and source files from this page\. 
 
@@ -51,13 +54,74 @@ The following steps guide you through the creation of a new assessment solution\
 A small number of APIs might show an "Incompatible" status\. This can happen when an API is not found in the Porting Assistant for \.NET database and the status is unknown to the Porting Assistant for \.NET system\.
    + **Source files** — this tab lists the **Source file name** in the solution, the number of **Incompatible API calls** over the total number of API calls for each source file, and the **Portability score** of the source file, which is the number of compatible APIs over the number of incompatible APIs in the solution, represented as a percentage\. You can select a source file to view the incompatible API calls and replacement suggestions in the source code\.
 
+     In each source file, any section of code that is detected as incompatible will be highlighted as follows:
+     + **Porting action** — code that initiates a porting action in the project\.
+     + **Incompatible method invocation** — an API that is incompatible with \.NET Core\.
+
 1. After you make changes to your solution file, you can choose **Reassess solution** to start a new assessment of your solution\.
+
+## Assess a new solution using the Porting Assistant CLI console application<a name="porting-assistant-cli-job"></a>
+
+The following steps guide you through the creation of a new assessment solution using the Porting Assistant CLI console application\. The CLI is packaged with the Porting Assistant for \.NET tool\. After you install the Porting Assistant for \.NET tool, the CLI can be found in the following location: `C:\Users\<user_name>\AppData\Local\Programs\Porting Assistant for .NET\resources\netcore_build\PortingAssistant.Client.CLI.exe`\.
+
+To assess a new solution using the Porting Assistant CLI console application, run the following commands\.
+
+1. `--solution-path (-s)`
+
+   **Definition**: The path to your solution file
+
+   **Required**: Yes
+
+1. `--output-path (-o)`
+
+   **Definition**: The path where the assessment JSON file is stored\.
+
+   **Required**: Yes
+
+1. `--target-version (-t)` 
+
+   **Definition**: The \.NET version to use for the assessment\.
+
+   **Required**: No
+
+   **Options**: 
+   + `netcore3.1` 
+   + `net5.0`
+   + `net6.0` \(default\)
+
+1. `--ignore-projects (-i)`
+
+   **Definition**: Projects that are not assessed\.
+
+   **Required**: No
+
+   **Value**: 
+
+   Comma separated project names\. For example `project1, project2`\.
+
+**Example 1**
+
+```
+& 'C:\Users\<username>\AppData\Local\Programs\Porting Assistant for .NET\resources\netcore_build\PortingAssistant.Client.CLI.exe' assess --solution-path "<path_to_solution/example_solution.sln>" --output-path "<path_to_output_dir>” --target “net5.0”
+```
+
+**Example 2**
+
+```
+& 'C:\Users\<username>\AppData\Local\Programs\Porting Assistant for .NET\resources\netcore_build\PortingAssistant.Client.CLI.exe' assess -s "<path_to_solution/example_solution.sln>" -o "<path_to_output_dir>” -t “net5.0”
+```
+
+**Example 3**
+
+```
+& 'C:\Users\<username>\AppData\Local\Programs\Porting Assistant for .NET\resources\netcore_build\PortingAssistant.Client.CLI.exe' assess -s "<path_to_solution/example_solution.sln>" -o "<path_to_output_dir>” -t “net5.0” -i “project1,project2”
+```
 
 ## Analyze NuGet dependencies per project<a name="porting-assistant-assessment-tool-analyze-project"></a>
 
 The following steps guide you through an analysis of the NuGet dependencies per project within an assessment\.
 
-1. From the main page of the assessment tool, select **Assessed solutions** from the left navigation pane\. 
+1. From the main page of Porting Assistant for \.NET, select **Assessed solutions** from the left navigation pane\. 
 
 1. On the **Assessed Solutions** page, select a solutions file\. You will be directed to the**Assessment overview** page\.
 

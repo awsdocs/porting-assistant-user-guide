@@ -6,4 +6,4 @@ To change your user settings, perform the following steps\.
 
 1. On the **Settings** page, select **Edit**\.
 
-1. On the **Set up Porting Assistant for \.NET** page, you can update your AWS user profile and your usage data selection\.
+1. On the **Set up Porting Assistant for \.NET** page, you can update your AWS user profile, your usage data selection, and the \.NET Core version to use for the assessment\. 

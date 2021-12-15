@@ -1,7 +1,7 @@
 # Porting Assistant for .NET User Guide
 
 -----
-*****Copyright &copy; 2020 Amazon Web Services, Inc. and/or its affiliates. All rights reserved.*****
+*****Copyright &copy; Amazon Web Services, Inc. and/or its affiliates. All rights reserved.*****
 
 -----
 Amazon's trademarks and trade dress may not be used in 
@@ -23,10 +23,19 @@ Amazon's trademarks and trade dress may not be used in
    + [Port a solution](porting-assistant-port.md)
    + [Remove a solution assessment from Porting Assistant for .NET](porting-assistant-remove.md)
    + [Change your Porting Assistant for .NET settings](porting-assistant-settings.md)
++ [Porting Assistant for .NET Visual Studio IDE extension](porting-assistant-vs-ide.md)
+   + [How Porting Assistant for .NET Visual Studio IDE extension works](porting-assistant-vs-ide-how-it-works.md)
+   + [Install Porting Assistant for .NET Visual Studio IDE extension](porting-assistant-vs-ide-installation.md)
+   + [Assess and analyze solution using Porting Assistant for .NET Visual Studio IDE extension](porting-assistant-vs-ide-solution-assessment.md)
+   + [Port solution using Porting Assistant for .NET Visual Studio IDE extension](porting-assistant-vs-ide-port-solution.md)
+   + [Transition from standalone tool to Porting Assistant for .NET Visual Studio IDE extension](porting-assistant-vs-ide-transition.md)
+   + [Troubleshoot the Porting Assistant for .NET Visual Studio IDE extension](porting-assistant-vs-ide-troubleshooting.md)
+   + [Porting Assistant for .NET Visual Studio IDE extension version history](porting-assistant-vs-ide-versions.md)
 + [Security in Porting Assistant for .NET](porting-assistant-security.md)
    + [Data protection in Porting Assistant for .NET](data-protection.md)
    + [Identity and Access Management for Porting Assistant for .NET](security-iam.md)
    + [Configuration and vulnerability analysis in Porting Assistant for .NET](security-vulnerability-analysis-and-management.md)
    + [Security best practices for Porting Assistant for .NET](security-best-practices.md)
 + [Metrics collected by AWS Porting Assistant for .NET](porting-assistant-metrics.md)
++ [Porting Assistant for .NET version history](porting-assistant-versions.md)
 + [Document History for Porting Assistant for .NET User Guide](doc-history.md)
