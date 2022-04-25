@@ -60,6 +60,10 @@ A small number of APIs might show an "Incompatible" status\. This can happen whe
 
 1. After you make changes to your solution file, you can choose **Reassess solution** to start a new assessment of your solution\.
 
+The following example shows the sample \.csv output for a NuGet assessment report, as part of the larger compatibility assessment report\. 
+
+![\[Image NOT FOUND\]](http://docs.aws.amazon.com/portingassistant/latest/userguide/images/nuget-packages-assessment.PNG)
+
 ## Assess a new solution using the Porting Assistant CLI console application<a name="porting-assistant-cli-job"></a>
 
 The following steps guide you through the creation of a new assessment solution using the Porting Assistant CLI console application\. The CLI is packaged with the Porting Assistant for \.NET tool\. After you install the Porting Assistant for \.NET tool, the CLI can be found in the following location: `C:\Users\<user_name>\AppData\Local\Programs\Porting Assistant for .NET\resources\netcore_build\PortingAssistant.Client.CLI.exe`\.

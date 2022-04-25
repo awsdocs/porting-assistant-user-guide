@@ -4,13 +4,13 @@ The following prerequisites must be verified in order to successfully port your 
 
 **Topics**
 + [Prerequisites](#porting-assistant-prereq-versions-dependencies)
-+ [Memory requirements for the Porting Assistant for \.NET Visual Studio for \.NET IDE extension\.](#porting-assistant-vs-ide-memory-requirements)
-+ [AWS Identity and Access Management \(IAM\)](#porting-assistant-iam)
++ [Memory requirements](#porting-assistant-vs-ide-memory-requirements)
++ [AWS Identity and Access Management](#porting-assistant-iam)
 
 ## Prerequisites<a name="porting-assistant-prereq-versions-dependencies"></a>
 
 The Porting Assistant for \.NET tool requires the following prerequisites for installation and usage\.
-+ **\.NET Core SDK 3\.1**: [Download \.NET Core](https://dotnet.microsoft.com/download/dotnet-core)\.
++ **\.NET 6 SDK**: [Download \.NET](https://dotnet.microsoft.com/download/dotnet-core)\.
 + **AWS CLI**: You must have a valid AWS CLI profile in order for Porting Assistant for \.NET to collect compatibility information on the public NuGet packages and the APIs within the packages that are in use by your application\. To view the type of application data collected by Porting Assistant for \.NET , see [Data collected by Porting Assistant for \.NETData collected](data-protection.md#porting-assistant-data-collected)\. Information about public NuGet packages is collected to help AWS prioritize work to address \.NET Core incompatibilities on the NuGet packages, if any\. For instructions on how to configure an AWS CLI profile, see [AWS Identity and Access Management \(IAM\)](#porting-assistant-iam) \. 
 + Windows 7 or later
 + Internet connectivity on the machine running the assessment
@@ -41,7 +41,11 @@ These requirements are provided as estimates\. Individual solutions can vary for
 
 ## AWS Identity and Access Management \(IAM\)<a name="porting-assistant-iam"></a>
 
-You must create an IAM user and attach a policy to your IAM user in order to grant permissions to the Porting Assistant for \.NET service\. Follow the steps in this section to create the user and attach the policy\.
+To use Porting Assistant for \.NET, you must provide AWS credentials in one of two ways:
++ Attach the required policy to an IAM user\.
++ Allow Porting Assistant for \.NET to search for the credentials\. Porting Assistant for \.NET searches for credentials in the order described in [\.NET credential search order](https://docs.aws.amazon.com/sdk-for-net/v3/developer-guide/creds-assign.html), and uses the first available set for the current application\.
+
+To create the IAM user and attach the required policy, follow the steps in this section\.
 
 **Topics**
 + [Create the IAM user](#porting-assistant-iam-create-user)
@@ -178,4 +182,4 @@ After you have created an IAM user, you can configure your AWS named profile to 
 
 1. After you configure the profile using the AWS CLI, Porting Assistant for \.NET will display the `default` profile under **AWS named profile** on the **Set up Porting Assistant for \.NET** page of the assesment tool\.
 
-For more information about configuring the AWS CLI, see [Configuring the AWS CLI ](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-configure.html)\.
+For more information about configuring the AWS CLI, see [Configuring the AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-configure.html)\.

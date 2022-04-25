@@ -5,7 +5,11 @@
 
 | Version | Details | Release date | 
 | --- | --- | --- | 
-| [1\.6\.2](https://s3.us-west-2.amazonaws.com/aws.portingassistant.dotnet.download/latest/windows/Porting-Assistant-Dotnet.exe) |  [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/portingassistant/latest/userguide/porting-assistant-versions.html)  | December 1, 2021 | 
+| [1\.6\.6](https://s3.us-west-2.amazonaws.com/aws.portingassistant.dotnet.download/latest/windows/Porting-Assistant-Dotnet.exe) |  [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/portingassistant/latest/userguide/porting-assistant-versions.html)  | April 15, 2022 | 
+| 1\.6\.5 |  [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/portingassistant/latest/userguide/porting-assistant-versions.html) [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/portingassistant/latest/userguide/porting-assistant-versions.html)  | April 4, 2022 | 
+| 1\.6\.4 |  [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/portingassistant/latest/userguide/porting-assistant-versions.html)  | January 14, 2022 | 
+| 1\.6\.3 |  [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/portingassistant/latest/userguide/porting-assistant-versions.html)  | December 20, 2021 | 
+| 1\.6\.2 |  [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/portingassistant/latest/userguide/porting-assistant-versions.html)  | December 1, 2021 | 
 | 1\.6\.1 |  [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/portingassistant/latest/userguide/porting-assistant-versions.html)  | November 22, 2021 | 
 | 1\.6\.0 |  [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/portingassistant/latest/userguide/porting-assistant-versions.html)  | October 18, 2021 | 
 | 1\.5\.4 |  [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/portingassistant/latest/userguide/porting-assistant-versions.html)  | October 6, 2021 | 

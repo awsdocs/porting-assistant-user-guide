@@ -8,7 +8,7 @@ To port a solution using the assessment tool, perform the following steps:
 
 1. From the main page of Porting Assistant for \.NET, choose **Get started**\. 
 
-1. On the **Edit settings** page, choose the target \.NET framework and AWS named profile to allow Porting Assistant to assess your solution\. You can also add the AWS named profile using the [ AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-files.html)\.
+1. On the **Edit settings** page, choose the target \.NET framework and AWS named profile to allow Porting Assistant to assess your solution\. You can also add the AWS named profile using the [AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-files.html)\.
 
 1. From the main page of the assessment tool, select **Assessed solutions** from the left navigation pane\. 
 

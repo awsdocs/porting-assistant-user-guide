@@ -4,8 +4,8 @@ This section contains information to help you set up your Porting Assistant for 
 
 **Topics**
 + [Prerequisites](porting-assistant-prerequisites.md)
-+ [Install Porting Assistant for \.NET](porting-assistant-install.md)
-+ [Use the Porting Assistant for \.NET assessment tool](porting-assistant-assessment-tool.md)
-+ [Port a solution](porting-assistant-port.md)
-+ [Remove a solution assessment from Porting Assistant for \.NET](porting-assistant-remove.md)
-+ [Change your Porting Assistant for \.NET settings](porting-assistant-settings.md)
++ [Install](porting-assistant-install.md)
++ [Use the assessment tool](porting-assistant-assessment-tool.md)
++ [Port solution](porting-assistant-port.md)
++ [Remove solution assessment](porting-assistant-remove.md)
++ [Change settings](porting-assistant-settings.md)
